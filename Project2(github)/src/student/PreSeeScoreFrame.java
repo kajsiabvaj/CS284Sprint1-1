@@ -16,7 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class PreSeeScoreFrame extends JFrame{
-
+	public JComboBox<String> subjectNameCombo;
+	public JComboBox<String> quizeNameCombo;
+	public JButton seeScoreBnt;
+	
 	public PreSeeScoreFrame() {
 
 		JPanel subjectPanel = new JPanel();
@@ -28,7 +31,7 @@ public class PreSeeScoreFrame extends JFrame{
 		
 		JLabel subjectLabel = new JLabel("ชื่อวิชา");
 		subjectLabel.setFont(new Font("Angsana New", Font.BOLD, 30));
-		JComboBox<String> subjectNameCombo = new JComboBox<String>();
+		subjectNameCombo = new JComboBox<String>();
 		subjectNameCombo.setPreferredSize(new Dimension(150, 30));
 		smallPanel.add(subjectLabel);
 		smallPanel.add(subjectNameCombo);
@@ -36,9 +39,9 @@ public class PreSeeScoreFrame extends JFrame{
 		this.add(subjectPanel,BorderLayout.NORTH);
 
 		JPanel quizePanel = new JPanel();
-		JLabel quizeLabel = new JLabel("คะแนนส่วนที่ออก");
+		JLabel quizeLabel = new JLabel("ชนิดคะแนน");
 		quizeLabel.setFont(new Font("Angsana New", Font.BOLD, 30));
-		JComboBox<String> quizeNameCombo = new JComboBox<String>();
+		quizeNameCombo = new JComboBox<String>();
 		quizeNameCombo.setPreferredSize(new Dimension(150, 30));
 		quizePanel.add(quizeLabel);
 		quizePanel.add(quizeNameCombo);
@@ -46,16 +49,16 @@ public class PreSeeScoreFrame extends JFrame{
 
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setPreferredSize(new Dimension(700,200));
-		JButton seeScoreBnt = new JButton("ดูคะแนน");
+		seeScoreBnt = new JButton("ดูคะแนน");
 		seeScoreBnt.setFont(new Font("Angsana New", Font.BOLD, 20));
 		seeScoreBnt.setPreferredSize(new Dimension(140, 30));
-		seeScoreBnt.addActionListener(new ActionListener() {
+		/*seeScoreBnt.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ScoreStudentFrame sf = new ScoreStudentFrame();
 			}
-		});
+		});*/
 		buttonPanel.add(seeScoreBnt);
 		this.add(buttonPanel,BorderLayout.SOUTH);
 	

@@ -72,14 +72,14 @@ public class CriteriaFrame extends JFrame {
 			}
 		});
 		nextBtn = new JButton("Next");
-		nextBtn.addActionListener(new ActionListener() {
+		/*nextBtn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				CriteriaFrame2 c2 = new CriteriaFrame2();
 			}
-		});
+		});*/
 		
 		
 		

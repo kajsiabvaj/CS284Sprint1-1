@@ -1,0 +1,23 @@
+public String checkGrade(double score) {
+		String grade = "";
+		
+		if(score >= 81.0) {
+			grade = "A";
+		} else if(score >= 74.0 && score < 81.0) {
+			grade = "B+";
+		} else if(score >= 67.0 && score < 74.0) {
+			grade = "B";
+		} else if(score >= 60.0 && score < 67.0) {
+			grade = "C+";
+		} else if(score >= 53.0 && score < 60.0) {
+			grade = "C";
+		} else if(score >= 47.0 && score < 53.0) {
+			grade = "D+";
+		} else if(score >= 41.0 && score < 47.0) {
+			grade = "D";
+		} else if(score < 41.0){
+			grade = "F";
+		}
+		
+		return grade;
+	}

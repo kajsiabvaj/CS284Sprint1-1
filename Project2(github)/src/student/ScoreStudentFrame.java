@@ -1,6 +1,8 @@
 package student;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,31 +15,53 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import classModel.ClassList;
+import classModel.Student;
+
 public class ScoreStudentFrame extends JFrame{
+	private Student student;
+	private String subjectName;
+	private String typeName;
+	public JLabel subjectNameLabel;
+	public JTable table;
+	public String header[] = {"เลขทะเบียน", "คะแนนดิบ","คะแนนสุทธิ" };
+	
+	public ScoreStudentFrame(Student student, String subjectName, String typeName) {
+		this.student = student;
+		this.subjectName = subjectName;
+		this.typeName = typeName;
+	}
 
 	public ScoreStudentFrame() {
 		
 		this.setTitle("คะแนนวิชา CS284");
 		JPanel northPanel = new JPanel();
-		JLabel subjectName = new JLabel("คะแนนวิชา CS284");
-		northPanel.add(subjectName);
+		northPanel.setPreferredSize(new Dimension(2000,50));
+		subjectNameLabel = new JLabel("คะแนนวิชา CS284");
+		subjectNameLabel.setFont(new Font("Angsana New", Font.BOLD, 30));
+		northPanel.add(subjectNameLabel);
 		this.add(northPanel,BorderLayout.NORTH);
 		
-		String data[][] = { { "1", "5909610098","0","0" },{ "2", "5909680109","0","0" },{ "3", "5909520032","0","0" },{ "4", "5909520024","0","0" } };
-		String header[] = { "เลขที่", "เลขทะเบียน", "คะแนนดิบ","คะแนนสุทธิ" };
-		JTable table = new JTable(data,header);
+		//row , column
+		String data[][] = { {"5909520016" , "0","0" },{"Max","Min","Average"},{"10","10","10"}};//,{"Max","Min","Average","SD"},{"10","10","10","10"} 
+//		String data[][] = new String[จำนวนนักเรียน/นักเรียนคนที่ login เข้ามา][4];
+		
+		
+		
+		table = new JTable(data,header);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.getColumnModel().getColumn(0).setPreferredWidth(100);
-		table.getColumnModel().getColumn(1).setPreferredWidth(300);
-		table.getColumnModel().getColumn(2).setPreferredWidth(140);
-		table.getColumnModel().getColumn(3).setPreferredWidth(140);
+		table.getColumnModel().getColumn(0).setPreferredWidth(300);
+		table.getColumnModel().getColumn(1).setPreferredWidth(190);
+		table.getColumnModel().getColumn(2).setPreferredWidth(190);
 		
 		
 		JScrollPane scrollPane = new JScrollPane(table);
+
 		this.add(scrollPane);
 		
+		
 		JPanel buttonPanel = new JPanel();
-		JButton cancelBtn = new JButton("cancel");
+		JButton cancelBtn = new JButton("Cancel");
 		cancelBtn.addActionListener(new ActionListener() {
 			
 			@Override
@@ -51,6 +75,35 @@ public class ScoreStudentFrame extends JFrame{
 		this.setSize(700,700);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setVisible(true);
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+	
+
+	public void setTable(JTable table) {
+		this.table = table;
 	}
 
 	public static void main(String[] args) {

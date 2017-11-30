@@ -20,24 +20,24 @@ public class LoginFrame extends JFrame{
 		setLayout(new GridLayout(0,2));
 		
 		teacher = new JButton("Teacher");
-		teacher.addActionListener(new ActionListener() {
+		/*teacher.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				TeacherFrame teacher = new TeacherFrame();
 				
 			}
-		});
+		});*/
 		
 		student = new JButton("Student");
-		student.addActionListener(new ActionListener() {
+		/*student.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				StudentFrame studen = new StudentFrame();
 				
 			}
-		});
+		});*/
 		
 		teacher.setFont(new Font("Angsana New", Font.BOLD, 100));
 		student.setFont(new Font("Angsana New", Font.BOLD, 100));

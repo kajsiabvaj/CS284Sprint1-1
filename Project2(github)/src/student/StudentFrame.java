@@ -18,19 +18,19 @@ import javax.swing.border.TitledBorder;
 
 public class StudentFrame extends JFrame {
 
-	private JButton bntLogout;
-	private JButton bntScore;
-	private JButton bntTranscript;
-	private JButton bntprofile;
-	private JLabel lbId;
-	private JLabel lbName;
-	private JLabel lbtxt;
-	private JLabel lbNotice;
-	private JLabel lbDate;
-	private String id = "5909450016";
-	private String name = "นางสาวแนนซี่ อยากได้สามี";
+	public JButton bntLogout;
+	public JButton bntScore;
+	public JButton bntTranscript;
+	public JButton bntprofile;
+	public JLabel lbId;
+	public JLabel lbName;
+	public JLabel lbtxt;
+	public JLabel lbNotice;
+	public JLabel lbDate;
+	public String id = "5909450016";
+	public String name = "นางสาวแนนซี่ อยากได้สามี";
 //	private String subject = "CS284";
-	private String date = "7/11/2560";
+	public String date = "7/11/2560";
 //	private String type = "Midterm";
 	
 	public StudentFrame() {
@@ -41,14 +41,14 @@ public class StudentFrame extends JFrame {
 		bntprofile.setFont(new Font("Angsana New", Font.BOLD, 18));
 		bntprofile.setPreferredSize(new Dimension(150, 30));
 		bntScore = new JButton("คะเเนน");
-		bntScore.addActionListener(new ActionListener() {
+		/*bntScore.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				PreSeeScoreFrame preSee = new PreSeeScoreFrame();
 				
 			}
-		});
+		});*/
 		bntScore.setFont(new Font("Angsana New", Font.BOLD, 18));
 		bntScore.setPreferredSize(new Dimension(150, 30));
 		bntTranscript = new JButton("ผลการศึกษา");
